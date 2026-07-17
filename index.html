@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Jordan Ellis — Software Engineer</title>
+<meta name="description" content="Jordan Ellis — Software Engineer specializing in resilient backend systems, cloud architecture, and developer tooling."/>
+
+<!-- ============================================================
+     EDIT ME: swap these three lines for your own name/role/summary.
+     These also drive the browser tab title and search-engine preview.
+     ============================================================ -->
+<meta property="og:title" content="Jordan Ellis — Software Engineer"/>
+<meta property="og:description" content="Portfolio, experience, and contact info for Jordan Ellis."/>
+<meta property="og:type" content="website"/>
+
+<link rel="icon" href="data:,"/>
+
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Geist:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+<script>
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          primary: "#0041c8",
+          "primary-container": "#0055ff",
+          "on-primary": "#ffffff",
+          "primary-fixed": "#dce1ff",
+          tertiary: "#972500",
+          "on-surface": "#1a1c1d",
+          "on-surface-variant": "#434656",
+          surface: "#f9f9fb",
+          "surface-container-lowest": "#ffffff",
+          "surface-container-low": "#f3f3f5",
+          "surface-container": "#eeeef0",
+          "surface-container-high": "#e8e8ea",
+          "surface-dim": "#d9dadc",
+          "inverse-on-surface": "#f0f0f2",
+          "inverse-surface": "#2f3132",
+          outline: "#737688",
+          "outline-variant": "#c3c5d9",
+        },
+        spacing: {
+          base: "4px",
+          xs: "8px",
+          sm: "16px",
+          md: "24px",
+          lg: "48px",
+          xl: "80px",
+          "margin-mobile": "16px",
+          "margin-desktop": "64px",
+        },
+        fontFamily: {
+          display: ["Geist", "sans-serif"],
+          "label-md": ["Geist", "sans-serif"],
+          "body-md": ["Inter", "sans-serif"],
+          code: ["Geist", "monospace"],
+        },
+        fontSize: {
+          display: ["clamp(2.5rem, 5vw, 3.75rem)", { lineHeight: "1.05", letterSpacing: "-0.02em", fontWeight: "700" }],
+          "headline-lg": ["32px", { lineHeight: "1.2", letterSpacing: "-0.01em", fontWeight: "600" }],
+          "headline-md": ["20px", { lineHeight: "1.4", fontWeight: "600" }],
+          "label-md": ["14px", { lineHeight: "1.2", letterSpacing: "0.05em", fontWeight: "500" }],
+          "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+        },
+      },
+    },
+  };
+</script>
+
+<style>
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    vertical-align: middle;
+  }
+  .hard-shadow { box-shadow: 4px 4px 0px 0px #1a1c1d; }
+  .dark .hard-shadow { box-shadow: 4px 4px 0px 0px #f0f0f2; }
+  .thin-border { border: 1px solid #c3c5d9; }
+  .dark .thin-border { border-color: #474a5c; }
+  .swiss-grid {
+    background-image: linear-gradient(#e2e2e4 1px, transparent 1px), linear-gradient(90deg, #e2e2e4 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+  .dark .swiss-grid {
+    background-image: linear-gradient(#2f3132 1px, transparent 1px), linear-gradient(90deg, #2f3132 1px, transparent 1px);
+  }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+    outline: 2px solid #0041c8;
+    outline-offset: 2px;
+  }
+  .nav-link { position: relative; }
+  .nav-link::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: -4px; height: 2px;
+    background: #0041c8; transform: scaleX(0); transform-origin: left; transition: transform .2s ease;
+  }
+  .nav-link:hover::after, .nav-link.active::after { transform: scaleX(1); }
+</style>
+</head>
+
+<body class="bg-surface dark:bg-inverse-surface text-on-surface dark:text-inverse-on-surface font-body-md antialiased">
+
+<!-- ================= NAV ================= -->
+<header class="fixed top-0 left-0 right-0 z-50 h-16 border-b border-outline-variant bg-surface/90 dark:bg-inverse-surface/90 backdrop-blur-md">
+  <div class="max-w-6xl mx-auto h-full px-margin-mobile md:px-margin-desktop flex items-center justify-between">
+    <a href="#top" class="flex items-center gap-2 font-display font-bold text-headline-md">
+      <span class="w-8 h-8 flex items-center justify-center bg-primary text-on-primary text-sm">JE</span>
+      <span class="hidden sm:inline">Jordan Ellis</span>
+    </a>
+
+    <nav class="hidden md:flex items-center gap-md font-label-md text-label-md uppercase">
+      <a href="#about" class="nav-link">About</a>
+      <a href="#experience" class="nav-link">Experience</a>
+      <a href="#work" class="nav-link">Work</a>
+      <a href="#skills" class="nav-link">Skills</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+
+    <div class="flex items-center gap-2">
+      <button id="theme-toggle" aria-label="Toggle dark mode" class="p-2 hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors">
+        <span class="material-symbols-outlined text-xl" id="theme-icon">dark_mode</span>
+      </button>
+      <a href="resume.pdf" download
+         class="hidden sm:inline-flex items-center gap-1 bg-primary text-on-primary px-4 py-2 font-label-md text-label-md uppercase hover:opacity-90 active:scale-95 transition-all">
+        <span class="material-symbols-outlined text-base">download</span> Resume
+      </a>
+      <button id="menu-toggle" aria-label="Open menu" aria-expanded="false" class="md:hidden p-2">
+        <span class="material-symbols-outlined text-2xl">menu</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- mobile menu -->
+  <div id="mobile-menu" class="md:hidden hidden border-t border-outline-variant bg-surface dark:bg-inverse-surface">
+    <nav class="flex flex-col p-margin-mobile gap-1 font-label-md text-label-md uppercase">
+      <a href="#about" class="py-2">About</a>
+      <a href="#experience" class="py-2">Experience</a>
+      <a href="#work" class="py-2">Work</a>
+      <a href="#skills" class="py-2">Skills</a>
+      <a href="#contact" class="py-2">Contact</a>
+      <a href="resume.pdf" download class="py-2 text-primary">Download Resume</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ================= HERO ================= -->
+  <section class="relative pt-32 pb-xl px-margin-mobile md:px-margin-desktop overflow-hidden">
+    <div class="absolute inset-0 swiss-grid opacity-40 pointer-events-none"></div>
+    <div class="max-w-6xl mx-auto relative">
+      <p class="font-label-md text-label-md uppercase text-primary mb-sm">Software Engineer — Berlin, DE</p>
+      <h1 class="font-display text-display max-w-3xl">
+        Building resilient systems,<br class="hidden sm:block"/> one architecture decision at a time.
+      </h1>
+      <p class="mt-md max-w-xl text-body-lg text-on-surface-variant">
+        I design and ship backend infrastructure, developer tooling, and cloud
+        architecture that hold up under real traffic. Currently focused on
+        distributed systems and platform reliability.
+      </p>
+      <div class="mt-lg flex flex-wrap gap-sm">
+        <a href="#work" class="bg-on-surface dark:bg-inverse-on-surface text-white dark:text-on-surface px-6 py-3 font-label-md text-label-md uppercase hard-shadow hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all">
+          View Work
+        </a>
+        <a href="#contact" class="thin-border px-6 py-3 font-label-md text-label-md uppercase hover:bg-surface-container dark:hover:bg-surface-container-high transition-all">
+          Get in Touch
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ABOUT ================= -->
+  <section id="about" class="px-margin-mobile md:px-margin-desktop py-xl border-t border-outline-variant">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-lg">
+      <div>
+        <h2 class="font-display text-headline-lg">About</h2>
+      </div>
+      <div class="md:col-span-2 space-y-md">
+        <p class="text-body-lg text-on-surface-variant">
+          I'm a software engineer with 8+ years building backend systems for
+          companies that can't afford downtime. My work spans distributed
+          systems, cloud infrastructure, and internal tooling that helps
+          engineering teams move faster without breaking things.
+        </p>
+        <p class="text-body-lg text-on-surface-variant">
+          Outside of work I mentor early-career engineers and write about
+          systems design. I care about clear documentation, boring
+          technology used well, and teams that ship without heroics.
+        </p>
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-sm pt-sm">
+          <div class="thin-border p-sm bg-surface-container-lowest dark:bg-inverse-surface">
+            <p class="font-label-md text-label-md uppercase text-on-surface-variant">Location</p>
+            <p class="font-bold">Berlin, DE</p>
+          </div>
+          <div class="thin-border p-sm bg-surface-container-lowest dark:bg-inverse-surface">
+            <p class="font-label-md text-label-md uppercase text-on-surface-variant">Focus</p>
+            <p class="font-bold">Distributed Systems</p>
+          </div>
+          <div class="thin-border p-sm bg-surface-container-lowest dark:bg-inverse-surface">
+            <p class="font-label-md text-label-md uppercase text-on-surface-variant">Available</p>
+            <p class="font-bold text-primary">Open to work</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= EXPERIENCE ================= -->
+  <section id="experience" class="px-margin-mobile md:px-margin-desktop py-xl border-t border-outline-variant bg-surface-container-lowest dark:bg-surface-container-high/20">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="font-display text-headline-lg mb-lg">Experience</h2>
+
+      <div class="space-y-md">
+        <article class="thin-border bg-white dark:bg-inverse-surface p-md hard-shadow">
+          <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-1">
+            <h3 class="font-label-md text-label-md font-bold uppercase">Lead Architect — CloudScale</h3>
+            <span class="font-code text-sm text-on-surface-variant">2019 — Present</span>
+          </div>
+          <p class="mt-xs text-on-surface-variant">
+            Led the transition to serverless architecture, cutting operational
+            overhead by 45%. Manage a distributed team of 15 engineers across
+            three time zones.
+          </p>
+          <ul class="list-disc list-inside text-sm text-on-surface-variant mt-xs space-y-1">
+            <li>Deployed Kubernetes clusters at global scale</li>
+            <li>Built AI-assisted load-balancing for traffic spikes</li>
+          </ul>
+        </article>
+
+        <article class="thin-border bg-white dark:bg-inverse-surface p-md">
+          <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-1">
+            <h3 class="font-label-md text-label-md font-bold uppercase">Systems Engineer — DataSync</h3>
+            <span class="font-code text-sm text-on-surface-variant">2015 — 2019</span>
+          </div>
+          <p class="mt-xs text-on-surface-variant">
+            Built data-pipeline monitoring tools in Go and Python, achieving
+            99.99% uptime for core financial services.
+          </p>
+        </article>
+
+        <article class="thin-border bg-white dark:bg-inverse-surface p-md">
+          <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-1">
+            <h3 class="font-label-md text-label-md font-bold uppercase">Backend Developer — Northwind Labs</h3>
+            <span class="font-code text-sm text-on-surface-variant">2012 — 2015</span>
+          </div>
+          <p class="mt-xs text-on-surface-variant">
+            Shipped and maintained REST APIs powering a consumer app used by
+            over 500,000 monthly active users.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SELECTED WORK ================= -->
+  <section id="work" class="px-margin-mobile md:px-margin-desktop py-xl border-t border-outline-variant">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="font-display text-headline-lg mb-lg">Selected Work</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-md">
+
+        <a href="#" class="group thin-border p-md bg-white dark:bg-inverse-surface hover:border-primary transition-all">
+          <div class="aspect-video bg-surface-container dark:bg-surface-container-high mb-sm flex items-center justify-center">
+            <span class="material-symbols-outlined text-4xl text-on-surface-variant">deployed_code</span>
+          </div>
+          <h3 class="font-label-md text-label-md font-bold uppercase">Fleet Orchestrator</h3>
+          <p class="text-sm text-on-surface-variant mt-xs">
+            Internal tool for zero-downtime deploys across 40+ services.
+          </p>
+          <span class="inline-flex items-center gap-1 text-primary text-sm mt-sm group-hover:underline">
+            View project <span class="material-symbols-outlined text-sm">arrow_outward</span>
+          </span>
+        </a>
+
+        <a href="#" class="group thin-border p-md bg-white dark:bg-inverse-surface hover:border-primary transition-all">
+          <div class="aspect-video bg-surface-container dark:bg-surface-container-high mb-sm flex items-center justify-center">
+            <span class="material-symbols-outlined text-4xl text-on-surface-variant">query_stats</span>
+          </div>
+          <h3 class="font-label-md text-label-md font-bold uppercase">Latency Dashboard</h3>
+          <p class="text-sm text-on-surface-variant mt-xs">
+            Real-time p99 latency tracking across regions, built on Grafana.
+          </p>
+          <span class="inline-flex items-center gap-1 text-primary text-sm mt-sm group-hover:underline">
+            View project <span class="material-symbols-outlined text-sm">arrow_outward</span>
+          </span>
+        </a>
+
+        <a href="#" class="group thin-border p-md bg-white dark:bg-inverse-surface hover:border-primary transition-all">
+          <div class="aspect-video bg-surface-container dark:bg-surface-container-high mb-sm flex items-center justify-center">
+            <span class="material-symbols-outlined text-4xl text-on-surface-variant">hub</span>
+          </div>
+          <h3 class="font-label-md text-label-md font-bold uppercase">Event Mesh</h3>
+          <p class="text-sm text-on-surface-variant mt-xs">
+            Lightweight pub/sub layer replacing three legacy message queues.
+          </p>
+          <span class="inline-flex items-center gap-1 text-primary text-sm mt-sm group-hover:underline">
+            View project <span class="material-symbols-outlined text-sm">arrow_outward</span>
+          </span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SKILLS ================= -->
+  <section id="skills" class="px-margin-mobile md:px-margin-desktop py-xl border-t border-outline-variant bg-surface-container-lowest dark:bg-surface-container-high/20">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-lg">
+      <div>
+        <h2 class="font-display text-headline-lg">Skills</h2>
+      </div>
+      <div class="md:col-span-2 space-y-md">
+        <div>
+          <p class="font-label-md text-label-md uppercase text-on-surface-variant mb-xs">Languages &amp; Runtimes</p>
+          <div class="flex flex-wrap gap-xs">
+            <span class="bg-surface-container dark:bg-surface-container-high px-3 py-1 text-sm font-bold thin-border">GO</span>
+            <span class="bg-surface-container dark:bg-surface-container-high px-3 py-1 text-sm font-bold thin-border">PYTHON</span>
+            <span class="bg-surface-container dark:bg-surface-container-high px-3 py-1 text-sm font-bold thin-border">TYPESCRIPT</span>
+            <span class="bg-surface-container dark:bg-surface-container-high px-3 py-1 text-sm font-bold thin-border">RUST</span>
+          </div>
+        </div>
+        <div>
+          <p class="font-label-md text-label-md uppercase text-on-surface-variant mb-xs">Infrastructure</p>
+          <div class="flex flex-wrap gap-xs">
+            <span class="bg-surface-container dark:bg-surface-container-high px-3 py-1 text-sm font-bold thin-border">KUBERNETES</span>
+            <span class="bg-surface-container dark:bg-surface-container-high px-3 py-1 text-sm font-bold thin-border">TERRAFORM</span>
+            <span class="bg-surface-container dark:bg-surface-container-high px-3 py-1 text-sm font-bold thin-border">AWS</span>
+            <span class="bg-surface-container dark:bg-surface-container-high px-3 py-1 text-sm font-bold thin-border">POSTGRESQL</span>
+          </div>
+        </div>
+        <div>
+          <p class="font-label-md text-label-md uppercase text-on-surface-variant mb-xs">Education</p>
+          <p class="font-bold">MSc Computer Science</p>
+          <p class="text-sm text-on-surface-variant">Technical University of Munich</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section id="contact" class="px-margin-mobile md:px-margin-desktop py-xl border-t border-outline-variant">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="font-display text-headline-lg mb-sm">Get in Touch</h2>
+      <p class="text-body-lg text-on-surface-variant max-w-xl mb-lg">
+        Open to new opportunities and interesting problems. The fastest way
+        to reach me is email.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-sm">
+        <button id="copy-email"
+          data-email="jordan.ellis@example.com"
+          class="flex items-center justify-between gap-md thin-border bg-white dark:bg-inverse-surface p-md hard-shadow hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all w-full sm:w-auto">
+          <span class="flex items-center gap-2">
+            <span class="material-symbols-outlined">mail</span>
+            <span id="email-text" class="font-code text-sm">jordan.ellis@example.com</span>
+          </span>
+          <span class="material-symbols-outlined text-base text-on-surface-variant">content_copy</span>
+        </button>
+      </div>
+
+      <div class="flex gap-sm mt-md">
+        <a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub"
+           class="p-3 thin-border hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors">
+          <span class="material-symbols-outlined">code</span>
+        </a>
+        <a href="https://linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn"
+           class="p-3 thin-border hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors">
+          <span class="material-symbols-outlined">work</span>
+        </a>
+        <a href="https://x.com/" target="_blank" rel="noopener" aria-label="X / Twitter"
+           class="p-3 thin-border hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors">
+          <span class="material-symbols-outlined">alternate_email</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="px-margin-mobile md:px-margin-desktop py-md border-t border-outline-variant">
+  <div class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2 text-sm text-on-surface-variant">
+    <span>© <span id="year"></span> Jordan Ellis. Built with Tailwind CSS.</span>
+    <a href="#top" class="hover:text-primary transition-colors">Back to top ↑</a>
+  </div>
+</footer>
+
+<script>
+  // Footer year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Mobile menu toggle
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  menuToggle.addEventListener('click', () => {
+    const isOpen = !mobileMenu.classList.contains('hidden');
+    mobileMenu.classList.toggle('hidden');
+    menuToggle.setAttribute('aria-expanded', String(!isOpen));
+  });
+  mobileMenu.querySelectorAll('a').forEach(a =>
+    a.addEventListener('click', () => mobileMenu.classList.add('hidden'))
+  );
+
+  // Dark mode toggle (persisted)
+  const root = document.documentElement;
+  const themeIcon = document.getElementById('theme-icon');
+  function applyTheme(theme) {
+    root.classList.toggle('dark', theme === 'dark');
+    themeIcon.textContent = theme === 'dark' ? 'light_mode' : 'dark_mode';
+  }
+  const savedTheme = localStorage.getItem('theme')
+    || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  applyTheme(savedTheme);
+  document.getElementById('theme-toggle').addEventListener('click', () => {
+    const next = root.classList.contains('dark') ? 'light' : 'dark';
+    localStorage.setItem('theme', next);
+    applyTheme(next);
+  });
+
+  // Copy email to clipboard
+  const copyBtn = document.getElementById('copy-email');
+  copyBtn.addEventListener('click', async () => {
+    const email = copyBtn.dataset.email;
+    const label = document.getElementById('email-text');
+    try {
+      await navigator.clipboard.writeText(email);
+      label.textContent = 'Copied!';
+      setTimeout(() => (label.textContent = email), 1500);
+    } catch {
+      window.location.href = 'mailto:' + email;
+    }
+  });
+
+  // Active nav link on scroll
+  const sections = document.querySelectorAll('main section[id]');
+  const navLinks = document.querySelectorAll('.nav-link');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
+        });
+      }
+    });
+  }, { rootMargin: '-50% 0px -50% 0px' });
+  sections.forEach(sec => observer.observe(sec));
+</script>
+
+</body>
+</html>
